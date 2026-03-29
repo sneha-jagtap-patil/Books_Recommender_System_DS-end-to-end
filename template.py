@@ -5,7 +5,7 @@ import logging
 logging.basicConfig(level=logging.INFO, format='[%(asctime)s]: %(message)s:')
 
 
-project_name = "books_recommender" 
+project_name = "books_recommender_System" 
 
 list_of_files = [
     f"{project_name}/__init__.py",
