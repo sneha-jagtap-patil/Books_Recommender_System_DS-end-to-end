@@ -22,3 +22,27 @@ class Recommendation:
             raise AppException(e, sys) from e
         
     
+    def fetch_poster(self,suggestion):
+        try:
+            book_name = []
+            ids_index = []
+            poster_url = []
+            book_pivot =  pickle.load(open(self.recommendation_config.book_pivot_serialized_objects,'rb'))
+            final_rating =  pickle.load(open(self.recommendation_config.final_rating_serialized_objects,'rb'))
+
+            for book_id in suggestion:
+                book_name.append(book_pivot.index[book_id])
+
+            for name in book_name[0]: 
+                ids = np.where(final_rating['title'] == name)[0][0]
+                ids_index.append(ids)
+
+            for idx in ids_index:
+                url = final_rating.iloc[idx]['image_url']
+                poster_url.append(url)
+
+            return poster_url
+        
+        except Exception as e:
+            raise AppException(e, sys) from e
+        
