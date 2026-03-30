@@ -66,3 +66,13 @@ class Recommendation:
         except Exception as e:
             raise AppException(e, sys) from e
         
+def train_engine(self):
+        try:
+            obj = TrainingPipeline()
+            obj.start_training_pipeline()
+            st.text("Training Completed!")
+            logging.info(f"Recommended successfully!")
+        except Exception as e:
+            raise AppException(e, sys) from e
+        
+    
