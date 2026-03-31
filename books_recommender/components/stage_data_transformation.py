@@ -69,17 +69,17 @@ class DataValidation:
             pickle.dump(final_rating,open(os.path.join(self.data_validation_config.serialized_objects_dir, "final_rating.pkl"),'wb'))
             logging.info(f"Saved final_rating serialization object to {self.data_validation_config.serialized_objects_dir}")
 
-    #     except Exception as e:
-    #         raise AppException(e, sys) from e
+        except Exception as e:
+            raise AppException(e, sys) from e
 
     
-    # def initiate_data_validation(self):
-    #     try:
-    #         logging.info(f"{'='*20}Data Validation log started.{'='*20} ")
-    #         self.preprocess_data()
-    #         logging.info(f"{'='*20}Data Validation log completed.{'='*20} \n\n")
-    #     except Exception as e:
-    #         raise AppException(e, sys) from e
+    def initiate_data_validation(self):
+        try:
+            logging.info(f"{'='*20}Data Validation log started.{'='*20} ")
+            self.preprocess_data()
+            logging.info(f"{'='*20}Data Validation log completed.{'='*20} \n\n")
+        except Exception as e:
+            raise AppException(e, sys) from e
 
 
 
