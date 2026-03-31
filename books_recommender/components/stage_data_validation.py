@@ -28,21 +28,21 @@ class DataTransformation:
             pickle.dump(book_pivot,open(os.path.join(self.data_transformation_config.transformed_data_dir,"transformed_data.pkl"),'wb'))
             logging.info(f"Saved pivot table data to {self.data_transformation_config.transformed_data_dir}")
 
-#             #keeping books name
-#             book_names = book_pivot.index
+            #keeping books name
+            book_names = book_pivot.index
 
-#             #saving book_names objects for web app
-#             os.makedirs(self.data_validation_config.serialized_objects_dir, exist_ok=True)
-#             pickle.dump(book_names,open(os.path.join(self.data_validation_config.serialized_objects_dir, "book_names.pkl"),'wb'))
-#             logging.info(f"Saved book_names serialization object to {self.data_validation_config.serialized_objects_dir}")
+            #saving book_names objects for web app
+            os.makedirs(self.data_validation_config.serialized_objects_dir, exist_ok=True)
+            pickle.dump(book_names,open(os.path.join(self.data_validation_config.serialized_objects_dir, "book_names.pkl"),'wb'))
+            logging.info(f"Saved book_names serialization object to {self.data_validation_config.serialized_objects_dir}")
 
-#             #saving book_pivot objects for web app
-#             os.makedirs(self.data_validation_config.serialized_objects_dir, exist_ok=True)
-#             pickle.dump(book_pivot,open(os.path.join(self.data_validation_config.serialized_objects_dir, "book_pivot.pkl"),'wb'))
-#             logging.info(f"Saved book_pivot serialization object to {self.data_validation_config.serialized_objects_dir}")
+            #saving book_pivot objects for web app
+            os.makedirs(self.data_validation_config.serialized_objects_dir, exist_ok=True)
+            pickle.dump(book_pivot,open(os.path.join(self.data_validation_config.serialized_objects_dir, "book_pivot.pkl"),'wb'))
+            logging.info(f"Saved book_pivot serialization object to {self.data_validation_config.serialized_objects_dir}")
 
-#         except Exception as e:
-#             raise AppException(e, sys) from e
+        except Exception as e:
+            raise AppException(e, sys) from e
 
     
 
