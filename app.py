@@ -116,4 +116,8 @@ if __name__ == "__main__":
  
     #recommendation
     if st.button('Show Recommendation'):
+<<<<<<< HEAD
         obj.recommendations_engine(selected_books)
+=======
+        obj.recommendations_engine(selected_books)
+>>>>>>> 8d068c4 (updare files)
