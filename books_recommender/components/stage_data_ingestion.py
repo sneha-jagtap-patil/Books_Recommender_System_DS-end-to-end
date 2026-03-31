@@ -6,6 +6,7 @@ from books_recommender.logger.log import logging
 from books_recommender.exception.exception_handler import AppException
 from books_recommender.config.configuration import AppConfiguration
 
+
 class DataIngestion:
 
     def __init__(self, app_config = AppConfiguration()):
@@ -19,7 +20,9 @@ class DataIngestion:
         except Exception as e:
             raise AppException(e, sys) from e
         
-def download_data(self):
+    
+
+    def download_data(self):
         """
         Fetch the data from the url
         
@@ -39,7 +42,8 @@ def download_data(self):
         except Exception as e:
             raise AppException(e, sys) from e
 
-def extract_zip_file(self,zip_file_path: str):
+
+    def extract_zip_file(self,zip_file_path: str):
         """
         zip_file_path: str
         Extracts the zip file into the data directory
@@ -53,3 +57,12 @@ def extract_zip_file(self,zip_file_path: str):
             logging.info(f"Extracting zip file: {zip_file_path} into dir: {ingested_dir}")
         except Exception as e:
             raise AppException(e,sys) from e
+
+    
+    def initiate_data_ingestion(self):
+        try:
+            zip_file_path = self.download_data()
+            self.extract_zip_file(zip_file_path=zip_file_path)
+            logging.info(f"{'='*20}Data Ingestion log completed.{'='*20} \n\n")
+        except Exception as e:
+            raise AppException(e, sys) from e
