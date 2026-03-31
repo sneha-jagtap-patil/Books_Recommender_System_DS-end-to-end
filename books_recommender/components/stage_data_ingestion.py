@@ -39,3 +39,17 @@ def download_data(self):
         except Exception as e:
             raise AppException(e, sys) from e
 
+def extract_zip_file(self,zip_file_path: str):
+        """
+        zip_file_path: str
+        Extracts the zip file into the data directory
+        Function returns None
+        """
+        try:
+            ingested_dir = self.data_ingestion_config.ingested_dir
+            os.makedirs(ingested_dir, exist_ok=True)
+            with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
+                zip_ref.extractall(ingested_dir)
+            logging.info(f"Extracting zip file: {zip_file_path} into dir: {ingested_dir}")
+        except Exception as e:
+            raise AppException(e,sys) from e
