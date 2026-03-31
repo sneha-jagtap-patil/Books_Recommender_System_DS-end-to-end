@@ -54,20 +54,20 @@ class DataValidation:
             # Lets take those books which got at least 50 rating of user
             final_rating = final_rating[final_rating['num_of_rating'] >= 50]
 
-    #         # lets drop the duplicates
-    #         final_rating.drop_duplicates(['user_id','title'],inplace=True)
-    #         logging.info(f" Shape of the final clean dataset: {final_rating.shape}")
+            # lets drop the duplicates
+            final_rating.drop_duplicates(['user_id','title'],inplace=True)
+            logging.info(f" Shape of the final clean dataset: {final_rating.shape}")
                         
-    #         # Saving the cleaned data for transformation
-    #         os.makedirs(self.data_validation_config.clean_data_dir, exist_ok=True)
-    #         final_rating.to_csv(os.path.join(self.data_validation_config.clean_data_dir,'clean_data.csv'), index = False)
-    #         logging.info(f"Saved cleaned data to {self.data_validation_config.clean_data_dir}")
+            # Saving the cleaned data for transformation
+            os.makedirs(self.data_validation_config.clean_data_dir, exist_ok=True)
+            final_rating.to_csv(os.path.join(self.data_validation_config.clean_data_dir,'clean_data.csv'), index = False)
+            logging.info(f"Saved cleaned data to {self.data_validation_config.clean_data_dir}")
 
 
-    #         #saving final_rating objects for web app
-    #         os.makedirs(self.data_validation_config.serialized_objects_dir, exist_ok=True)
-    #         pickle.dump(final_rating,open(os.path.join(self.data_validation_config.serialized_objects_dir, "final_rating.pkl"),'wb'))
-    #         logging.info(f"Saved final_rating serialization object to {self.data_validation_config.serialized_objects_dir}")
+            #saving final_rating objects for web app
+            os.makedirs(self.data_validation_config.serialized_objects_dir, exist_ok=True)
+            pickle.dump(final_rating,open(os.path.join(self.data_validation_config.serialized_objects_dir, "final_rating.pkl"),'wb'))
+            logging.info(f"Saved final_rating serialization object to {self.data_validation_config.serialized_objects_dir}")
 
     #     except Exception as e:
     #         raise AppException(e, sys) from e
