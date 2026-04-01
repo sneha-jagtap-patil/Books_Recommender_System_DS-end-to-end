@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # End-to-End Recommender System
 
 ## Project Overview
@@ -95,4 +95,3 @@ Features
     Visual Interface: Shows book titles along with their cover images.
     Training Pipeline: Allows retraining of the model through UI or command line.
     Dockerized: Suitable for deployment on cloud platforms such as AWS.
->>>>>>> 8d068c4 (updare files)

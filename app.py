@@ -1,7 +1,3 @@
-# from books_recommender.logger import log
-
-# log.logging.info("Starting the books recommender system application.")
-
 import os
 import sys
 import pickle
@@ -22,6 +18,7 @@ class Recommendation:
             raise AppException(e, sys) from e
         
     
+
     def fetch_poster(self,suggestion):
         try:
             book_name = []
@@ -47,6 +44,7 @@ class Recommendation:
             raise AppException(e, sys) from e
         
 
+    
     def recommend_book(self,book_name):
         try:
             books_list = []
@@ -66,7 +64,9 @@ class Recommendation:
         except Exception as e:
             raise AppException(e, sys) from e
         
-def train_engine(self):
+
+    
+    def train_engine(self):
         try:
             obj = TrainingPipeline()
             obj.start_training_pipeline()
@@ -76,6 +76,7 @@ def train_engine(self):
             raise AppException(e, sys) from e
         
     
+
     def recommendations_engine(self,selected_books):
         try:
             recommended_books,poster_url = self.recommend_book(selected_books)
@@ -100,24 +101,22 @@ def train_engine(self):
             raise AppException(e, sys) from e
 
 
+
 if __name__ == "__main__":
     st.header('End to End Books Recommender System')
     st.text("This is a collaborative filtering based recommendation system!")
 
     obj = Recommendation()
 
+    #Training
+    if st.button('Train Recommender System'):
+        obj.train_engine()
+
+    book_names = pickle.load(open(os.path.join('templates','book_names.pkl') ,'rb'))
+    selected_books = st.selectbox(
+        "Type or select a book from the dropdown",
+        book_names)
     
-if __name__ == "__main__":
-    st.header('End to End Books Recommender System')
-    st.text("This is a collaborative filtering based recommendation system!")
-
-    obj = Recommendation()
-
- 
     #recommendation
     if st.button('Show Recommendation'):
-<<<<<<< HEAD
         obj.recommendations_engine(selected_books)
-=======
-        obj.recommendations_engine(selected_books)
->>>>>>> 8d068c4 (updare files)
