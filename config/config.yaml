@@ -2,7 +2,7 @@ artifacts_config:
   artifacts_dir: artifacts
 
 data_ingestion_config:
-  dataset_download_url: file:///C:/Users/Cpu/Desktop/AI/Books_Recommender_System_DS-end-to-end/Notebook/data.zip
+  dataset_download_url: C:/Users/Cpu/Desktop/AI/Books_Recommender_System_DS-end-to-end/Notebook
   dataset_dir: data_ingestion
   raw_data_dir: raw_data
   ingested_dir: ingested_data
