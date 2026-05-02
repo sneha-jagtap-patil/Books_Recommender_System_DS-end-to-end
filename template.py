@@ -1,7 +1,7 @@
 import os
 from pathlib import Path 
 import logging 
-
+# importing logging module to log the messages in the console.
 logging.basicConfig(level=logging.INFO, format='[%(asctime)s]: %(message)s:')
 
 
